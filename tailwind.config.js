@@ -2,6 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{html,js}", "./*.html", "./*.js"],
   theme: {
+    letterSpacing: {
+      widest: '0.25em',
+    },
     extend: {
       fontFamily: {
         Inter: ['Inter', 'sans-serif']

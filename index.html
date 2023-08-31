@@ -8,19 +8,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/212fe58092.js" crossorigin="anonymous"></script>
 </head>
-<body class="flex items-center justify-center h-screen font-Inter">
-    <header>
-        <div>
-            <h1>Social Media Dashboard</h1>
-            <p>Total Followers: 23,004</p>
+<body class="flex items-center justify-center flex-col font-Inter">
+    <header class="flex items-center justify-center flex-col py-7 font-bold w-full">
+        <div class=" flex items-start flex-col border-b-2 pb-7 w-11/12 border-lightTheme-VeryDarkBlueText">
+            <h1 class="text-lightTheme-VeryDarkBlueText dark:text-darkTheme-WhiteText text-2xl">Social Media Dashboard</h1>
+            <p class="text-lightTheme-DarkGrayishBlueText text-lg">Total Followers: 23,004</p>
         </div>
-        <div class="flex flex-row">
-            <p>Dark Mode</p>
+        <div class="flex items-center justify-between w-11/12 flex-row pt-4">
+            <p class="text-lightTheme-DarkGrayishBlueText text-lg">Dark Mode</p>
             <label class="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" value="" class="sr-only peer">
-                <div class="w-11 h-6 bg-custom-Grad2 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r from-custom-Grad1 to-custom-Grad2"></div>
+                <div class="w-11 h-6 bg-lightTheme-Toggle rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 dark:peer-checked:bg-gradient-to-r from-darkTheme-Togglelineargradient1 to-darkTheme-Togglelineargradient2"></div>
               </label>
         </div>
     </header>
+    <main class="flex items-center justify-center flex-col gap-7 w-full font-normal">
+        <div class="bg-lightTheme-LightGrayishBlueCardBG border-t-4 border-primary-Facebook flex items-center justify-center flex-col w-11/12 py-10">
+            <div class="flex items-center justify-center flex-row gap-2 pb-7">
+                <img src="images/icon-facebook.svg" alt="icon-facebook">
+                <p class="text-lightTheme-DarkGrayishBlueText">@nathanf</p>
+            </div>
+            <h1 class="text-6xl font-bold text-lightTheme-VeryDarkBlueText">1987</h1>
+            <p class="text-xl tracking-widest text-lightTheme-DarkGrayishBlueText">Followers</p>
+            <div class="flex items-center justify-center flex-row pt-7 gap-2">
+                <img src="images/icon-up.svg" alt="icon-up">
+                <p class="text-sm text-primary-LimeGreen font-bold">12 Today</p>
+            </div>
+        </div>
+
+        <div class="bg-lightTheme-LightGrayishBlueCardBG border-t-4 border-primary-Twitter flex items-center justify-center flex-col w-11/12 py-10">
+            <div class="flex items-center justify-center flex-row gap-2 pb-7">
+                <img src="images/icon-twitter.svg" alt="icon-twitter">
+                <p class="text-lightTheme-DarkGrayishBlueText">@nathanf</p>
+            </div>
+            <h1 class="text-6xl font-bold text-lightTheme-VeryDarkBlueText">1044</h1>
+            <p class="text-xl tracking-widest text-lightTheme-DarkGrayishBlueText">Followers</p>
+            <div class="flex items-center justify-center flex-row pt-7 gap-2">
+                <img src="images/icon-up.svg" alt="icon-up">
+                <p class="text-sm text-primary-LimeGreen font-bold">99 Today</p>
+            </div>
+        </div>
+
+        <div class="bg-lightTheme-LightGrayishBlueCardBG border-t-4 border-gra flex items-center justify-center flex-col w-11/12 py-10">
+            <div class="flex items-center justify-center flex-row gap-2 pb-7">
+                <img src="images/icon-instagram.svg" alt="icon-instagram">
+                <p class="text-lightTheme-DarkGrayishBlueText">@realnathanf</p>
+            </div>
+            <h1 class="text-6xl font-bold text-lightTheme-VeryDarkBlueText">11K</h1>
+            <p class="text-xl tracking-widest text-lightTheme-DarkGrayishBlueText">Followers</p>
+            <div class="flex items-center justify-center flex-row pt-7 gap-2">
+                <img src="images/icon-up.svg" alt="icon-up">
+                <p class="text-sm text-primary-LimeGreen font-bold">1099 Today</p>
+            </div>
+        </div>
+
+        <div class="bg-lightTheme-LightGrayishBlueCardBG border-t-4 border-primary-YouTube flex items-center justify-center flex-col w-11/12 py-10">
+            <div class="flex items-center justify-center flex-row gap-2 pb-7">
+                <img src="images/icon-youtube.svg" alt="icon-instagram">
+                <p class="text-lightTheme-DarkGrayishBlueText">Nathan F.</p>
+            </div>
+            <h1 class="text-6xl font-bold text-lightTheme-VeryDarkBlueText">8239</h1>
+            <p class="text-xl tracking-widest text-lightTheme-DarkGrayishBlueText">Subscribers</p>
+            <div class="flex items-center justify-center flex-row pt-7 gap-2">
+                <img src="images/icon-down.svg" alt="icon-down">
+                <p class="text-sm text-primary-BrightRed font-bold">144 Today</p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

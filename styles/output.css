@@ -562,12 +562,16 @@ video {
   height: 1.5rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .w-11 {
   width: 2.75rem;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .cursor-pointer {
@@ -578,6 +582,14 @@ video {
   flex-direction: row;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -586,17 +598,177 @@ video {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-7 {
+  gap: 1.75rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
 
-.bg-red-700 {
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-t-4 {
+  border-top-width: 4px;
+}
+
+.border-lightTheme-VeryDarkBlueText {
+  --tw-border-opacity: 1;
+  border-color: hsl(230 17% 14% / var(--tw-border-opacity));
+}
+
+.border-primary-Facebook {
+  --tw-border-opacity: 1;
+  border-color: hsl(208 92% 53% / var(--tw-border-opacity));
+}
+
+.border-primary-Twitter {
+  --tw-border-opacity: 1;
+  border-color: hsl(203 89% 53% / var(--tw-border-opacity));
+}
+
+.border-primary-YouTube {
+  --tw-border-opacity: 1;
+  border-color: hsl(348 97% 39% / var(--tw-border-opacity));
+}
+
+.bg-lightTheme-LightGrayishBlueCardBG {
   --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+  background-color: hsl(227 47% 96% / var(--tw-bg-opacity));
+}
+
+.bg-lightTheme-Toggle {
+  --tw-bg-opacity: 1;
+  background-color: hsl(230 22% 74% / var(--tw-bg-opacity));
+}
+
+.from-darkTheme-Togglelineargradient1 {
+  --tw-gradient-from: hsl(210, 78%, 56%) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(210 78% 56% / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-darkTheme-Togglelineargradient2 {
+  --tw-gradient-to: hsl(146, 68%, 55%) var(--tw-gradient-to-position);
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.pb-7 {
+  padding-bottom: 1.75rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pt-7 {
+  padding-top: 1.75rem;
 }
 
 .font-Inter {
   font-family: Inter, sans-serif;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.tracking-widest {
+  letter-spacing: 0.25em;
+}
+
+.text-lightTheme-DarkGrayishBlueText {
+  --tw-text-opacity: 1;
+  color: hsl(228 12% 44% / var(--tw-text-opacity));
+}
+
+.text-lightTheme-VeryDarkBlueText {
+  --tw-text-opacity: 1;
+  color: hsl(230 17% 14% / var(--tw-text-opacity));
+}
+
+.text-primary-LimeGreen {
+  --tw-text-opacity: 1;
+  color: hsl(163 72% 41% / var(--tw-text-opacity));
+}
+
+.text-primary-BrightRed {
+  --tw-text-opacity: 1;
+  color: hsl(356 69% 56% / var(--tw-text-opacity));
 }
 
 .after\:absolute::after {
@@ -658,10 +830,6 @@ video {
   content: var(--tw-content);
 }
 
-.peer:checked ~ .peer-checked\:bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
 .peer:checked ~ .peer-checked\:after\:translate-x-full::after {
   content: var(--tw-content);
   --tw-translate-x: 100%;
@@ -683,5 +851,14 @@ video {
   .dark\:bg-gray-700 {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+
+  .dark\:text-darkTheme-WhiteText {
+    --tw-text-opacity: 1;
+    color: hsl(0 0% 100% / var(--tw-text-opacity));
+  }
+
+  .peer:checked ~ .dark\:peer-checked\:bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
   }
 }
