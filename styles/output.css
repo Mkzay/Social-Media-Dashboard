@@ -893,6 +893,11 @@ video {
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
+:is(.dark .dark\:border-darkTheme-DesaturatedBlueText) {
+  --tw-border-opacity: 1;
+  border-color: hsl(228 34% 66% / var(--tw-border-opacity));
+}
+
 :is(.dark .dark\:bg-darkTheme-VeryDarkBlueBG) {
   --tw-bg-opacity: 1;
   background-color: hsl(230 17% 14% / var(--tw-bg-opacity));
