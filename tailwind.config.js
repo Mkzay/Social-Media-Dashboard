@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}", "./*.html", "./*.js"],
-  darkMode: 'class',
   theme: {
     letterSpacing: {
       widest: '0.25em',
@@ -40,6 +39,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: []
 }
 

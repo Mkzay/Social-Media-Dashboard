@@ -7,9 +7,21 @@
     <link rel="stylesheet" href="styles/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/212fe58092.js" crossorigin="anonymous"></script>
+    <script>
+        // It's best to inline this in `head` to avoid FOUC (flash of unstyled content) when changing pages or themes
+        if (
+          localStorage.getItem('color-theme') === 'dark' ||
+          (!('color-theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      </script>
 </head>
-<body class="flex items-center justify-center flex-col font-Inter mb-8 dark:bg-darkTheme-VeryDarkBlueBG">
-    <header class="flex items-center justify-center flex-col bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-VeryDarkBlueTopBGPattern py-7 font-bold w-full lg:flex-row lg:pb-36 lg:px-14 lg:justify-between">
+<body class="flex items-center justify-center flex-col font-Inter mb-8 bg-lightTheme-WhiteBG dark:bg-darkTheme-VeryDarkBlueBG">
+    <header class="flex items-center justify-center flex-col pb-20 rounded-b-xl bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-VeryDarkBlueTopBGPattern py-7 font-bold w-full lg:flex-row lg:pb-36 lg:px-14 lg:justify-between lg:rounded-b-2xl">
         <div class="flex items-start flex-col border-b pb-7 w-11/12 border-lightTheme-VeryDarkBlueText dark:border-darkTheme-DesaturatedBlueText lg:border-b-0">
             <h1 class="text-lightTheme-VeryDarkBlueText text-2xl dark:text-darkTheme-WhiteText">Social Media Dashboard</h1>
             <p class="text-lightTheme-DarkGrayishBlueText text-lg dark:text-darkTheme-DesaturatedBlueText">Total Followers: 23,004</p>
@@ -17,13 +29,13 @@
         <div class="flex items-center justify-between w-11/12 flex-row pt-4 lg:justify-center lg:gap-4 lg:w-44">
             <p class="text-lightTheme-DarkGrayishBlueText text-lg dark:text-darkTheme-DesaturatedBlueText">Dark Mode</p>
             <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" value="" class="sr-only peer">
-                <div class="w-11 h-6 bg-lightTheme-Toggle rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 dark:peer-checked:bg-gradient-to-r from-darkTheme-Togglelineargradient1 to-darkTheme-Togglelineargradient2"></div>
-              </label>
+                <input type="checkbox" id="checkbox" value="" class="sr-only peer">
+                <div class="w-11 h-6 bg-lightTheme-Toggle rounded-full  peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 dark:peer-checked:bg-gradient-to-r from-darkTheme-Togglelineargradient1 to-darkTheme-Togglelineargradient2"></div>
+            </label>
         </div>
     </header>
-    <main class="flex items-center justify-center flex-col gap-7 w-full font-normal lg:flex-row lg:w-11/12 lg:-mt-32">
-        <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG border-t-4 border-primary-Facebook flex items-center justify-center flex-col w-11/12 py-10 rounded-md">
+    <main class="flex items-center justify-center flex-col gap-7 -mt-10 w-full font-normal lg:flex-row lg:w-11/12 lg:-mt-32">
+        <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG border-t-4 border-primary-Facebook flex items-center justify-center flex-col w-11/12 py-10 rounded-md hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
             <div class="flex items-center justify-center flex-row gap-2 pb-7">
                 <img src="images/icon-facebook.svg" alt="icon-facebook">
                 <p class="text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">@nathanf</p>
@@ -35,7 +47,7 @@
                 <p class="text-sm text-primary-LimeGreen font-bold">12 Today</p>
             </div>
         </div>
-        <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG border-t-4 border-primary-Twitter flex items-center justify-center flex-col w-11/12 py-10 rounded-md">
+        <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG border-t-4 border-primary-Twitter flex items-center justify-center flex-col w-11/12 py-10 rounded- hover:bg-lightTheme-VeryPaleBlueTopBGPattern dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern cursor-pointer">
             <div class="flex items-center justify-center flex-row gap-2 pb-7">
                 <img src="images/icon-twitter.svg" alt="icon-twitter">
                 <p class="text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">@nathanf</p>
@@ -48,7 +60,7 @@
             </div>
         </div>
         <div class="bg-gradient-to-r from-primary-Instagram1 to-primary-Instagram2 pt-1 pb-0 px-0 w-11/12 rounded-md">
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col w-full py-10">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col w-full py-10 hover:bg-lightTheme-VeryPaleBlueTopBGPattern dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern cursor-pointer">
                 <div class="flex items-center justify-center flex-row gap-2 pb-7">
                     <img src="images/icon-instagram.svg" alt="icon-instagram">
                     <p class="text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">@realnathanf</p>
@@ -61,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG border-t-4 border-primary-YouTube flex items-center justify-center flex-col w-11/12 py-10 rounded-md">
+        <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG border-t-4 border-primary-YouTube flex items-center justify-center flex-col w-11/12 py-10 rounded-md hover:bg-lightTheme-VeryPaleBlueTopBGPattern dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern cursor-pointer">
             <div class="flex items-center justify-center flex-row gap-2 pb-7">
                 <img src="images/icon-youtube.svg" alt="icon-instagram">
                 <p class="text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Nathan F.</p>
@@ -79,7 +91,7 @@
             <h1 class="text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-WhiteText text-2xl font-bold">Overview - Today</h1>
         </div>
         <div class="flex items-center justify-center flex-col w-11/12 gap-7 lg:flex-row">
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Page Views</p>
                     <img src="images/icon-facebook.svg" alt="icon-facebook">
@@ -92,7 +104,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Likes</p>
                     <img src="images/icon-facebook.svg" alt="icon-facebook">
@@ -105,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Likes</p>
                     <img src="images/icon-instagram.svg" alt="icon-instagram">
@@ -118,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Profile Views</p>
                     <img src="images/icon-instagram.svg" alt="icon-instagram">
@@ -133,7 +145,7 @@
             </div>
         </div>
         <div class="flex items-center justify-center flex-col w-11/12 gap-7 lg:flex-row">
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Retweets</p>
                     <img src="images/icon-twitter.svg" alt="icon-twitter">
@@ -146,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Likes</p>
                     <img src="images/icon-twitter.svg" alt="icon-twitter">
@@ -159,7 +171,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Likes</p>
                     <img src="images/icon-youtube.svg" alt="icon-youtube">
@@ -172,7 +184,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4">
+            <div class="bg-lightTheme-LightGrayishBlueCardBG dark:bg-darkTheme-DarkDesaturatedBlueCardBG flex items-center justify-center flex-col gap-5 w-full py-6 px-4 hover:bg-lightTheme-VeryPaleBlueTopBGPattern cursor-pointer dark:hover:bg-darkTheme-VeryDarkBlueTopBGPattern">
                 <div class="flex items-center justify-between w-11/12 flex-row">
                     <p class="text-base font-bold text-lightTheme-DarkGrayishBlueText dark:text-darkTheme-DesaturatedBlueText">Total Views</p>
                     <img src="images/icon-youtube.svg" alt="icon-youtube">
