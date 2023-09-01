@@ -903,9 +903,24 @@ video {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
+:is(.dark .dark\:bg-darkTheme-VeryDarkBlueTopBGPattern) {
+  --tw-bg-opacity: 1;
+  background-color: hsl(232 19% 15% / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-darkTheme-DarkDesaturatedBlueCardBG) {
+  --tw-bg-opacity: 1;
+  background-color: hsl(228 28% 20% / var(--tw-bg-opacity));
+}
+
 :is(.dark .dark\:text-darkTheme-WhiteText) {
   --tw-text-opacity: 1;
   color: hsl(0 0% 100% / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:text-darkTheme-DesaturatedBlueText) {
+  --tw-text-opacity: 1;
+  color: hsl(228 34% 66% / var(--tw-text-opacity));
 }
 
 :is(.dark .peer:checked ~ .dark\:peer-checked\:bg-gradient-to-r) {
